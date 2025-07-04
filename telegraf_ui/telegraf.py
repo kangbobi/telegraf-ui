@@ -1,4 +1,3 @@
-
 import frappe
 import paramiko
 from datetime import datetime
@@ -56,3 +55,22 @@ def update_all_status():
         except Exception as e:
             frappe.log_error(f"Host {h}: {e}")
             frappe.db.set_value("Telegraf Host", h, "telegraf_status", "Error")
+
+@frappe.whitelist()
+def test_connection(hostname, username, password, ssh_port=22):
+    """Test SSH connection to a host"""
+    try:
+        ssh = paramiko.SSHClient()
+        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        ssh.connect(
+            hostname=hostname,
+            port=int(ssh_port or 22),
+            username=username,
+            password=password,
+            timeout=10
+        )
+        ssh.close()
+        return True
+    except Exception as e:
+        frappe.log_error(f"Connection test failed for {hostname}: {str(e)}")
+        return False
