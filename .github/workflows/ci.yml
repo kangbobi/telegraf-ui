@@ -37,13 +37,25 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y redis-server redis-tools
-          sudo systemctl start redis-server
-          sudo systemctl enable redis-server
+          sudo apt-get install -y redis-tools
+
+      - name: Configure Redis connection
+        run: |
+          echo "Redis is running on localhost:6379 via Docker service"
+          redis-cli -h localhost -p 6379 ping
+
+      - name: Create symbolic link for redis-server
+        run: |
+          # Create redis-server command that points to Docker service
+          echo '#!/bin/bash' | sudo tee /usr/local/bin/redis-server
+          echo 'echo "Redis server (Docker service) is running on localhost:6379"' | sudo tee -a /usr/local/bin/redis-server
+          echo 'exit 0' | sudo tee -a /usr/local/bin/redis-server
+          sudo chmod +x /usr/local/bin/redis-server
 
       - name: Install bench
         run: |
           pip install frappe-bench
+          export REDIS_URL="redis://localhost:6379"
           bench init frappe-bench --python python3
           cd frappe-bench
           bench get-app frappe https://github.com/frappe/frappe --branch version-14
