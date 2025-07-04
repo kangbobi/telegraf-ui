@@ -4,7 +4,7 @@ __pycache__/
 *.DS_Store
 node_modules/
 .env
-upload_github.bat
+*.bat
 *.log
 *.pid
 *.sqlite3
