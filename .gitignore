@@ -56,25 +56,7 @@ build/
 *.sublime-workspace
 *.vagrant/
 .vagrant/
-*.terraform/
-.terraform/
-*.terraform.lock.hcl
-*.terraform.tfstate
-*.terraform.tfstate.backup
-*.terraform.tfvars
-*.terraform.tfvars.json
-*.terraform.tfvars.yaml
-*.terraform.tfvars.yml
-*.terraform.tfplan
-*.terraform.tfplan.json
-*.terraform.tfplan.yaml
-*.terraform.tfplan.yml
-*.terraform.tfstate.d/
-*.terraform.tfstate.d/
-*.terraform.tfstate.d/*
-*.terraform.tfstate.d/.terraform.lock.hcl
-*.terraform.tfstate.d/.terraform.tfstate
-*.terraform.tfstate.d/.terraform.tfstate.backup
+
 
 
 
