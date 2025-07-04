@@ -103,14 +103,8 @@ app_version = "1.0.0"
 # Scheduled Tasks
 # ---------------
 
-scheduler_events = {
-	"cron": {
-		"*/5 * * * *": [
-			"telegraf_ui.telegraf.update_all_status"
-		]
-	}
-}
 
+###
 # Testing
 # -------
 
