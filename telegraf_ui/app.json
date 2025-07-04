@@ -1,5 +1,5 @@
 {
-  "app_name": "telegraf-ui",
+  "app_name": "telegraf_ui",
   "app_title": "Telegraf UI",
   "app_publisher": "kangbobi",
   "app_description": "Multi-host Telegraf config management for Frappe",
