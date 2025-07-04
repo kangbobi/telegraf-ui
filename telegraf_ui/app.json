@@ -1,11 +1,11 @@
 {
-  "app_name": "telegraf_ui",
+  "app_name": "telegraf-ui",
   "app_title": "Telegraf UI",
-  "app_publisher": "Your Name",
+  "app_publisher": "kangbobi",
   "app_description": "Multi-host Telegraf config management for Frappe",
-  "app_email": "your.email@example.com",
+  "app_email": "devprogramming.bs@gmail.com",
   "app_license": "MIT",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "required_apps": [],
   "app_icon": "octicon octicon-desktop-download",
   "app_color": "#00B8A9"
