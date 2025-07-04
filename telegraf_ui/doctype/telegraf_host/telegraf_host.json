@@ -1,0 +1,20 @@
+
+{
+ "doctype": "DocType",
+ "name": "Telegraf Host",
+ "module": "Telegraf UI",
+ "custom": 1,
+ "fields": [
+  {"fieldname": "hostname", "fieldtype": "Data", "label": "Hostname"},
+  {"fieldname": "ssh_port", "fieldtype": "Int", "label": "SSH Port", "default": "22"},
+  {"fieldname": "username", "fieldtype": "Data", "label": "Username"},
+  {"fieldname": "password", "fieldtype": "Password", "label": "Password"},
+  {"fieldname": "last_seen", "fieldtype": "Datetime", "label": "Last Seen"},
+  {"fieldname": "telegraf_status", "fieldtype": "Select", "label": "Status", "options": "Running\nStopped\nError"},
+  {"fieldname": "notes", "fieldtype": "Small Text", "label": "Notes"},
+  {"fieldname": "enabled", "fieldtype": "Check", "label": "Enabled", "default": "1"}
+ ],
+ "permissions": [
+  {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1}
+ ]
+}

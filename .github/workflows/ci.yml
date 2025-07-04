@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      mariadb:
+        image: mariadb:10.6
+        env:
+          MYSQL_ROOT_PASSWORD: root
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping --silent" --health-interval=10s --health-timeout=5s --health-retries=5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install bench
+        run: |
+          pip install frappe-bench
+          bench init frappe-bench --skip-redis --python python3
+          cd frappe-bench
+          bench get-app frappe https://github.com/frappe/frappe --branch version-15
+          bench new-site testsite.local \
+            --mariadb-root-password=root \
+            --admin-password=admin \
+            --install-app frappe
+
+      - name: Link app and install
+        run: |
+          cd frappe-bench
+          bench get-app telegraf_ui ../telegraf_ui
+          bench --site testsite.local install-app telegraf_ui
+
+      - name: Contoh pengujian otomatis
+        run: |
+          cd frappe-bench
+          bench --site testsite.local execute frappe.utils.print_version
+          echo "Simulasi pengujian otomatis: cek versi Frappe dan status site."
+          bench --site testsite.local list-apps
+      - name: Jalankan unit test Python
+        run: |
+          cd telegraf_ui
+          python -m unittest discover -s tests
