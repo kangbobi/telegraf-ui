@@ -1,5 +1,0 @@
-{
-  "js/telegraf_ui.min.js": [
-    "telegraf_ui/public/js/telegraf_editor.js"
-  ]
-}
