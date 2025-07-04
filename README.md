@@ -1,6 +1,6 @@
 
 # Telegraf UI for Frappe
-![CI](https://github.com/your-username/telegraf_ui/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/kangbobi/telegraf_ui/actions/workflows/ci.yml/badge.svg)
 
 Manajemen konfigurasi Telegraf multi-host melalui antarmuka Frappe + SSH.
 
@@ -13,7 +13,7 @@ Manajemen konfigurasi Telegraf multi-host melalui antarmuka Frappe + SSH.
 ## Instalasi
 
 ```bash
-bench get-app telegraf_ui https://github.com/your-username/telegraf_ui.git
+bench get-app telegraf_ui https://github.com/kangbobi/telegraf_ui.git
 bench --site your-site-name install-app telegraf_ui
 ```
 

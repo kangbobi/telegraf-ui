@@ -1,3 +1,4 @@
+@echo off
 REM Konfigurasi user
 git config --global user.name "kangbobi"
 git config --global user.email "devprogramming.bs@gmail.com"

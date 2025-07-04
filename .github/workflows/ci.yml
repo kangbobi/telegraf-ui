@@ -31,7 +31,7 @@ jobs:
       - name: Install bench
         run: |
           pip install frappe-bench
-          bench init frappe-bench --skip-redis --python python3
+          bench init frappe-bench --python python3
           cd frappe-bench
           bench get-app frappe https://github.com/frappe/frappe --branch version-15
           bench new-site testsite.local \
