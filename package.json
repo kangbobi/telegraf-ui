@@ -1,0 +1,17 @@
+{
+  "name": "telegraf_ui",
+  "version": "1.0.0",
+  "description": "Multi-host Telegraf config management for Frappe",
+  "main": "index.js",
+  "scripts": {
+    "build": "frappe build --app telegraf_ui"
+  },
+  "keywords": [
+    "telegraf",
+    "frappe"
+  ],
+  "author": "kangbobi",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}

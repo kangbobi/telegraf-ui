@@ -1,7 +1,5 @@
 {
-  "build": {
-    "js/telegraf_ui.min.js": [
-      "public/js/telegraf_editor.js"
-    ]
-  }
+  "js/telegraf_ui.min.js": [
+    "public/js/telegraf_editor.js"
+  ]
 }
