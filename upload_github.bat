@@ -1,15 +1,10 @@
-git config --global user.name "your-username"
-git config --global user.email "your-email@example.com"
-git add .
-git commit -m "Update: auto commit via upload_github.bat"
-git push origin main
-pause
+
 @echo off
 REM Batch file untuk upload ke GitHub
 
 REM Konfigurasi user (edit jika perlu)
-git config --global user.name "your-username"
-git config --global user.email "your-email@example.com"
+git config --global user.name "kangbobi"
+git config --global user.email "devprogramming.bs@gmail.com"
 
 echo Pilih mode push:
 echo 1. Push awal (init repository, add remote, push pertama kali)
