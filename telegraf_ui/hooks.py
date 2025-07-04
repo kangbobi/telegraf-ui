@@ -11,7 +11,7 @@ app_version = "1.0.0"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/telegraf_ui/css/telegraf_ui.css"
-app_include_js = "/assets/telegraf_ui/js/telegraf_ui.min.js"
+#app_include_js = "/assets/telegraf_ui/js/telegraf_ui.min.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/telegraf_ui/css/telegraf_ui.css"
